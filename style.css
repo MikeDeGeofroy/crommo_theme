@@ -74,7 +74,7 @@ html,body{
     padding-top: 14vh;
     margin-right: auto;
     margin-left: auto;
-    min-height: 86vh;
+    min-height:100%;
 }
 
 .homepageslider{
@@ -127,11 +127,10 @@ h1{
     border-top: 25px solid rgba(229, 225, 236, 1.00);
     border-radius: 5px;
     float: left;
-    height: 50%;
     box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.5);
     -moz-box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.5);
     -webkit-box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.5);
-    -khtml-box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.5); 
+    -khtml-box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.5);
 }
 
 .shopimg:hover{
@@ -144,15 +143,29 @@ h1{
 }
 
 .shopimg img{
-    top: -30px;
+    top: -20px;
     position: relative;
     z-index: 2;
     height: 24px;
 }
 
+.shopimg p{
+    top: -38px;
+    position: relative;
+    z-index: 2;
+    margin: 0px;
+    font-size: 13px;
+    color: #4a6c78;
+    text-align: center;
+}
+
 .shopimg img{
     display: inline-block;
     height: 12px;
+}
+
+.buttons{
+    margin-left: 5px;
 }
 
 .follow{
@@ -177,4 +190,8 @@ h1{
     float: right;
     margin: 4vh;
     width: 50vw;
+}
+
+.instagramcontainer{
+    position: relative;
 }

@@ -1,9 +1,7 @@
 $(function() {
     HeaderProportions();
     MarqueeProportions();
-    $("#buttons").click(function() {
-        $(".shopimg").hide();
-    });
+    ShopImageProportions();
 });
 
 $(window).resize(function() {
@@ -67,4 +65,12 @@ function MarqueeProportions(){
             scroll();
         });
     }
+}
+
+function ShopImageProportions(){
+    $(".shopimg").each(function(){
+        console.log("u gay lol");
+        minwidth = $("p", this).width() + 100;
+        $(this).css("min-width", minwidth + "px");
+    });
 }
