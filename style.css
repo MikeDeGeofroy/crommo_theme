@@ -71,6 +71,7 @@ html,body{
 .postcontainer{
     width: 75vw;
     z-index: 1;
+    padding-top: 14vh;
     margin-right: auto;
     margin-left: auto;
     min-height: 86vh;
@@ -87,10 +88,6 @@ html,body{
 .post{
     width: 40%;
     height: auto;
-}
-
-.post img{
-    width: 100%;
 }
 
 .slidepost{
