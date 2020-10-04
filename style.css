@@ -122,53 +122,6 @@ h1{
     line-height: 0.7em;
 }
 
-.shopimg{
-    border: 3px solid rgba(229, 225, 236, 1.00);
-    border-top: 25px solid rgba(229, 225, 236, 1.00);
-    border-radius: 5px;
-    float: left;
-    box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.5);
-    -moz-box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.5);
-    -webkit-box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.5);
-    -khtml-box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.5);
-    margin: 25px;
-}
-
-.shopimg .imgcontainer img{
-    height: 100%;
-    z-index: 1;
-}
-
-.imgcontainer{
-    height: 80%;
-}
-
-.shopimg img{
-    top: -20px;
-    position: relative;
-    z-index: 2;
-    height: 24px;
-}
-
-.shopimg p{
-    top: -38px;
-    position: relative;
-    z-index: 2;
-    margin: 0px;
-    font-size: 13px;
-    color: #4a6c78;
-    text-align: center;
-}
-
-.shopimg img{
-    display: inline-block;
-    height: 12px;
-}
-
-.buttons{
-    margin-left: 5px;
-}
-
 .follow{
     font-weight: 300;
     text-align: center;

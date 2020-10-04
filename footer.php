@@ -1,3 +1,6 @@
+    <div class="instagramcontainer">
+        <p class="follow">FOLLOW US <a href="https://www.instagram.com/crommo__">@crommo__</a></p>
+    </div>
     <div class="footer">
         <img src="<?php echo get_template_directory_uri()?>/assets/logo.png" alt="">
         <div class="info">
