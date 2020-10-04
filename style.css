@@ -131,15 +131,16 @@ h1{
     -moz-box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.5);
     -webkit-box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.5);
     -khtml-box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.5);
-}
-
-.shopimg:hover{
-    transform: scale(1.005);
+    margin: 25px;
 }
 
 .shopimg .imgcontainer img{
     height: 100%;
     z-index: 1;
+}
+
+.imgcontainer{
+    height: 80%;
 }
 
 .shopimg img{

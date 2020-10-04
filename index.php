@@ -29,8 +29,15 @@ $query = new WP_Query( $args );
                     </div>
                     <p><span><?php the_title(); ?>.jpeg</span></p>
                     <div class="imgcontainer">
-                        <?php the_content(); ?>
+                        <?php 
+                        $output = preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $post->post_content, $matches);
+                        echo $matches[0][0];
+                        ?>
                     </div>
+                    <?php 
+                    $testiiing = get_post_meta($post->ID, "precio", true);
+                    echo do_shortcode('[wp_paypal button="buynow" name="My product" amount="' . $testiiing . '"]');
+                    ?>
                 </div>
                 <?php
                 }
@@ -48,7 +55,6 @@ $query = new WP_Query( $args );
         </div>
         <div class="instagramcontainer">
             <p class="follow">FOLLOW US <a href="https://www.instagram.com/crommo__">@crommo__</a></p>
-            <?php echo do_shortcode('[insta-gallery id="1"]'); ?>
         </div>
     </div>
 
