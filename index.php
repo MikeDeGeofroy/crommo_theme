@@ -3,11 +3,11 @@
 <?php
 if( is_front_page() ){
     $args = array(
-        'cat' => 4
+        'category_name' => 'home'
     );
 } elseif ( is_page( 'shop' ) ){
     $args = array(
-        'cat' => 3
+        'category_name' => 'shop'
     );
     $is_shop = true;
 }
@@ -22,21 +22,21 @@ $query = new WP_Query( $args );
             if ( $query->have_posts() ) {
                 while ( $query->have_posts() ) {
                     $query->the_post(); ?>
-                <div class="shopimg">
+                <div class="post">
                     <div class="buttons">
                         <img src="<?php echo get_template_directory_uri(). '/assets/button2.png'?>" alt="">
                         <img src="<?php echo get_template_directory_uri(). '/assets/button1.png'?>" alt="">
                     </div>
                     <p><span><?php the_title(); ?>.jpeg</span></p>
-                    <div class="imgcontainer">
+                    <div class="shopimg">
                         <?php 
                         $output = preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $post->post_content, $matches);
                         echo $matches[0][0];
                         ?>
                     </div>
                     <?php 
-                    $testiiing = get_post_meta($post->ID, "precio", true);
-                    echo do_shortcode('[wp_paypal button="buynow" name="My product" amount="' . $testiiing . '"]');
+                    $price = get_post_meta($post->ID, "precio", true);
+                    echo do_shortcode('[wp_paypal button="buynow" name="My product" amount="' . $price . '"]');
                     ?>
                 </div>
                 <?php
@@ -52,9 +52,6 @@ $query = new WP_Query( $args );
             }
         }
         ?>
-        </div>
-        <div class="instagramcontainer">
-            <p class="follow">FOLLOW US <a href="https://www.instagram.com/crommo__">@crommo__</a></p>
         </div>
     </div>
 

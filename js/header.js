@@ -67,10 +67,9 @@ function MarqueeProportions(){
     }
 }
 
-// function ShopImageProportions(){
-//     $(".shopimg").each(function(){
-//         console.log("u gay lol");
-//         minwidth = $("p", this).width() + 100;
-//         $(this).css("min-width", minwidth + "px");
-//     });
-// }
+function ShopImageProportions(){
+    $(".post").each(function(){
+        titlewidth = $(".shopimg", this).width();
+        $("p", this).css("width", titlewidth);
+    });
+}
