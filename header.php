@@ -11,6 +11,25 @@
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(). '/style.css' ?>">
     <script>
         text = "<?php echo bloginfo( 'description' ); ?>";
+        shop = false;
+        <?php 
+        if( is_page( 'shop' ) ){
+            echo "shop = true;";
+        }
+        ?>
+        if(shop){
+            $(document).ready(function () {
+
+            if (localStorage.getItem("scroll_position") != null) {
+                $(window).scrollTop(localStorage.getItem("scroll_position"));
+            }
+
+            $(window).on("scroll", function() {
+                localStorage.setItem("scroll_position", $(window).scrollTop());
+            });
+
+            });
+        }
     </script>
 </head>
 

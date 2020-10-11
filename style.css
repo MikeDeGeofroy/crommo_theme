@@ -69,21 +69,31 @@ html,body{
 }
 
 .postcontainer{
-    width: 75vw;
+    width: 100vw;
     z-index: 1;
     padding-top: 14vh;
     margin-right: auto;
     margin-left: auto;
     min-height:100%;
     height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column{
+    flex: 20%;
+    padding: 0 4px;
 }
 
 .shopimg img{
-    width: 50vh;
+    width: 100%;
+}
+
+.overlay{
+    z-index: 4;
 }
 
 .shopimg{
-    width: fit-content;
     border: 3px solid rgba(229, 225, 236, 1.00);
     border-top: 30px solid rgba(229, 225, 236, 1.00);
     border-radius: 5px;
@@ -91,26 +101,20 @@ html,body{
     -moz-box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.25);
     -webkit-box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.25);
     -khtml-box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.25);
-    width: fit-content;
-}
-
-.shopimg{
-    height: fit-content;
-    width: fit-content;
+    overflow: hidden;
     position: relative;
 }
 
 .post{
-    height: fit-content;
-    width: fit-content;
-    margin: 25px;
+    margin-top: 8px;
+    vertical-align: middle;
 }
 
 .post p{
-    top: 23px;
+    top: 48px;
     font-family: 'Roboto';
     z-index: 2;
-    margin: 0px;
+    margin: 0;
     font-size: 13px;
     color: #4a6c78;
     text-align: center;
@@ -119,9 +123,27 @@ html,body{
 
 .buttons img{
     height: 12px;
-    top: 40px;
+    top: 65px;
     position: relative;
-    z-index: 2;
+    z-index: 3;
+}
+
+.button2{
+    cursor: default;
+}
+
+.button3 a{
+    position: relative;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0);
+    font-size: 20px;
+    font-weight: 900;
+    padding: 8px;
+    border: 3px solid rgba(255, 255, 255, 0);
+}
+
+.button3{
+    width: 20%;
 }
 
 .buttons{
@@ -134,11 +156,6 @@ html,body{
     padding-top: 18vh;
     margin-right: auto;
     margin-left: auto;
-}
-
-.post{
-    width: 40%;
-    height: auto;
 }
 
 .slidepost{

@@ -81,3 +81,8 @@ if ( $the_query->have_posts() ) {
 // Restore original Post Data
 wp_reset_postdata();
 ?>
+
+<?php 
+                    $price = get_post_meta($post->ID, "precio", true);
+                    echo do_shortcode('[wp_paypal button="buynow" name="My product" amount="' . $price . '"]');
+                    ?>
