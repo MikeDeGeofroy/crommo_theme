@@ -38,9 +38,9 @@ $query = new WP_Query( $args );
                 </div>
             </div>
             <div class="description">
-                <a href="">
+                <a href="<?php the_permalink() ?>">
                     <h2><?php the_title(); ?></h2>
-                    <div><span>9.000.000</span><span> EUR</span></div>
+                    <div><span><?php echo get_post_meta("precio"); ?></span><span> EUR</span></div>
                 </a>
             </div>
             <p class="button3"><a href="<?php the_permalink() ?>">VER ARTICULO</a></p>

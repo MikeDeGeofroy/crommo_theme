@@ -82,6 +82,12 @@ html,body {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 }
 
+@media(max-width: 425px) {
+    .postcontainer {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
 .shopimg img {
     width: 100%;
 }
