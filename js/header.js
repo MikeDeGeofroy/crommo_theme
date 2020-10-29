@@ -89,7 +89,7 @@ function ShopSettings(){
             }, 500);
         }
 
-        $(".button3", this).css("top", margintop + $(".button3", this).height() + 20);
+        $(".button3", this).css("top", -margintop - $(".button3", this).height() - $(".description", this).height() - 10);
 
         $(".shopimg .overlay", this).mouseenter(function() {
             $("img", this).css("filter", "blur(2px)").css("transform", "scale(1.05)");
