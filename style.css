@@ -82,10 +82,28 @@ html,body {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 }
 
-@media(max-width: 425px) {
-    .postcontainer {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
+.imagecontainer_single {
+    width: 90vw;
+    z-index: 1;
+    margin-right: auto;
+    margin-left: auto;
+    height: fit-content;
+    display: grid;
+    grid-gap: 30px;
+    grid-row-gap: 0px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    margin-bottom: 50px;
+}
+
+.postcontainer_single{
+    padding-top: calc(14vh + 30px);
+    width: 90vw;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#description, #purchase{
+    margin-top: 30px;
 }
 
 .shopimg img {
