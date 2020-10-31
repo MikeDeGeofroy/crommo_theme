@@ -40,7 +40,7 @@ function MarqueeProportions(){
     // Centering Marquee Text & Setting text size.
     marqueeheight = $("#marquee").height();
     marqueetextsize = marqueeheight/1.8;
-    marqueetextoffset = marqueeheight/2 - marqueetextsize/1.8;
+    marqueetextoffset = marqueeheight/2 - marqueetextsize/1.6;
     $("#marquee p").css("font-size", marqueetextsize);
     $("#marquee p").css("margin-top", marqueetextoffset);
 
