@@ -38,17 +38,17 @@
 
 <body>
     <div class="headercontainer">
-        <div id="header">
-            <a href="/" style="margin-left: 50px;">INICIO</a>
-            <a href="/shop">TIENDA</a>
-            <a href="/contact" style="margin-right: 100px;">CONTACTO</a>
-            <a id="logo" href="/"><img src="<?php echo get_template_directory_uri()?>/assets/logo.png" alt=""></a>
-        </div>
         <div id="marquee">
             <p>
                 <span>
 
                 </span>
             </p>
+        </div>
+        <div id="header">
+            <a href="/" style="margin-left: 50px;">INICIO</a>
+            <a href="/shop">TIENDA</a>
+            <a href="/contact" style="margin-right: 100px;">CONTACTO</a>
+            <a id="logo" href="/"><img src="<?php echo get_template_directory_uri()?>/assets/logo.png" alt=""></a>
         </div>
     </div>
