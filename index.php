@@ -1,15 +1,18 @@
 <?php get_header(); ?>
 
 <?php
+session_start();
+
 if( is_front_page() ){
     $args = array(
         'category_name' => 'home'
     );
+    $_SESSION['is_shop'] = false;
 } elseif ( is_page( 'shop' ) ){
     $args = array(
         'category_name' => 'shop'
     );
-    $is_shop = true;
+    $_SESSION['is_shop'] = true;
 }
 
 $query = new WP_Query( $args );
@@ -18,7 +21,7 @@ $query = new WP_Query( $args );
 <div id=main>
     <div class="postcontainer">
         <?php
-        if( $is_shop ){
+        if( $_SESSION['is_shop'] ){
             if ( $query->have_posts() ) {
                 while ( $query->have_posts() ) {
                     $query->the_post(); ?>
@@ -38,7 +41,7 @@ $query = new WP_Query( $args );
                 </div>
             </div>
             <div class="description">
-                <a href="<?php the_permalink() ?>">
+                <a href="">
                     <div class="title"><span><?php the_title(); ?></span></div>
                     <div><span><?php get_metadata('post', $post->ID, 'precio', true); ?></span><span> EUR</span></div>
                 </a>
@@ -51,9 +54,13 @@ $query = new WP_Query( $args );
         } else {
             if ( $query->have_posts() ) {
                 while ( $query->have_posts() ) {
-                    $query->the_post();
-            
-                    the_content();
+                    $query->the_post(); ?>
+                    <a href="<?php the_permalink() ?>">                    <?php 
+                        $output = preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $post->post_content,
+                        $matches);
+                        echo $matches[0][0];
+                    ?></a>
+                <?php
                 }
             }
         }

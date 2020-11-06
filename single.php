@@ -1,6 +1,10 @@
 <?php get_header(); ?>
 
     <div id=main>
+    <?php
+    session_start();
+    if( $_SESSION['is_shop'] ){
+        ?>
     <div class="postcontainer_single">
     <h1><?php the_title(); ?></h1>
             <div class="imagecontainer_single">
@@ -65,6 +69,15 @@
                     </span>
             </div>
         </div>
+        <?php
+    } else {
+        ?>
+        <div class="postcontainer">
+        
+        </div>
+        <?php
+    } 
+    ?>
     </div>
 
 <?php get_footer(); ?>
