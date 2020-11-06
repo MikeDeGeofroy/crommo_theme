@@ -7,21 +7,24 @@ if( is_front_page() ){
     $args = array(
         'category_name' => 'home'
     );
-    $_SESSION['is_shop'] = false;
+    $_SESSION['category'] = "home";
 } elseif ( is_page( 'shop' ) ){
     $args = array(
         'category_name' => 'shop'
     );
-    $_SESSION['is_shop'] = true;
+    $_SESSION['category'] = "shop";
+} else {
+    $_SESSION['category'] = "contact";
 }
 
 $query = new WP_Query( $args );
 ?>
 
-<div id=main>
-    <div class="postcontainer">
+<div id="main">
         <?php
-        if( $_SESSION['is_shop'] ){
+        if( $_SESSION['category'] == "shop" ){ ?>
+        <div class="postcontainer">
+        <?php
             if ( $query->have_posts() ) {
                 while ( $query->have_posts() ) {
                     $query->the_post(); ?>
@@ -51,7 +54,12 @@ $query = new WP_Query( $args );
         <?php
                 }
             }
-        } else {
+        ?>
+        </div>
+        <?php
+        } elseif( $_SESSION['category'] == "home" ) { ?>
+            <div class="postcontainer">
+            <?php
             if ( $query->have_posts() ) {
                 while ( $query->have_posts() ) {
                     $query->the_post(); ?>
@@ -63,9 +71,24 @@ $query = new WP_Query( $args );
                 <?php
                 }
             }
+            ?>
+            </div>
+            <?php
+        } else { ?>
+        <div style="margin: 0;" id="canvas">
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>
+        <script src="<?php echo get_template_directory_uri(). '/js/obj.js' ?>"></script>
+        <script src="<?php echo get_template_directory_uri(). '/js/mtl.js' ?>"></script>
+
+        <script>
+        ObjectAnimation("<?php echo get_template_directory_uri()?>");
+        </script>
+            <?php
         }
         ?>
-    </div>
 </div>
 
 

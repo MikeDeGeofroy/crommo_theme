@@ -3,7 +3,7 @@
     <div id=main>
     <?php
     session_start();
-    if( $_SESSION['is_shop'] ){
+    if( $_SESSION['category'] == "shop" ){
         ?>
     <div class="postcontainer_single">
     <h1><?php the_title(); ?></h1>
@@ -70,13 +70,15 @@
             </div>
         </div>
         <?php
-    } else {
+    } elseif( $_SESSION['category'] == "home" ) {
         ?>
         <div class="postcontainer">
         
         </div>
         <?php
-    } 
+    } else {
+        echo "lol";
+    }
     ?>
     </div>
 
