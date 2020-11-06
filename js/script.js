@@ -1,6 +1,7 @@
 $(function() {
     HeaderProportions();
     MarqueeProportions();
+    InstaFooter()
 });
 
 $(window).resize(function() {
@@ -131,5 +132,39 @@ function ShopSettings(){
                 console.log($(this).css("transform"));
             });
         }
+    });
+}
+
+function InstaFooter(){
+    $.getJSON("https://www.instagram.com/crommo__/?__a=1", (data) => {
+        function CreatePost(url, post_url){
+            var new_post = document.createElement('div');
+            new_post.className = "instagram_single_post_container";
+            $(".instagram_posts_container").append(new_post);
+            var new_post_a = document.createElement('a');
+            // new_post_a.setAttribute(href, post_url);
+            new_post_a.href = post_url;
+            new_post.append(new_post_a);
+            var new_post_img = document.createElement('img');
+            new_post_img.src = url;
+            new_post_a.append(new_post_img);
+        }
+
+        number_of_posts = data.graphql.user.edge_owner_to_timeline_media.count;
+
+        posts_array = data.graphql.user.edge_owner_to_timeline_media.edges;
+
+        posts_array = posts_array.slice(0, 10);
+
+        console.log(posts_array);
+
+        posts_array.forEach((element) =>{
+            console.log(element.node.display_url);
+            CreatePost(element.node.display_url, "test");
+        });
+
+        url = "test";
+        post_url = "some other test"
+        // template = $.template('<div class="instagram_single_post_container"><a href="${url}" ><img src="${post_url}"></a><div>');
     });
 }
