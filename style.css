@@ -105,15 +105,34 @@ html,body {
     margin-left: auto;
     height: fit-content;
     display: grid;
-    grid-gap: 30px;
-    grid-row-gap: 0px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    margin-bottom: 50px
+    grid-gap: 2vw;
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+    grid-template-columns: auto auto auto;
 }
 
 .instagram_posts_container a img{
-    object-fit: contain;
     width: 100%;
+}
+
+.instagram_single_post_container{
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+}
+
+.instagram_single_post_container img{
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.instagram_posts_container a {
+    height: 100%;
 }
 
 @media(max-width: 375px) {

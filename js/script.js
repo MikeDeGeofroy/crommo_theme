@@ -1,13 +1,14 @@
 $(function() {
     HeaderProportions();
     MarqueeProportions();
-    InstaFooter()
+    InstaFooter();
 });
 
 $(window).resize(function() {
     HeaderProportions();
     MarqueeProportions();
     ShopSettings();
+    FooterProportions();
 });
 
 $(document).ready(function(){
@@ -73,11 +74,11 @@ function MarqueeProportions(){
 }
 
 function ShopSettings(){
-    $(".post").each(function(){
+    $(".post").each( () => {
         titlewidth = $(".shopimg", this).width() + 5;
         $("p", this).css("width", titlewidth);
 
-        $(".buttons .button1", this).click(function(){
+        $(".buttons .button1", this).click( () => {
             postid = $(this).parent().parent().attr('id');
             $("#" + postid).fadeOut();
         });
@@ -142,8 +143,8 @@ function InstaFooter(){
             new_post.className = "instagram_single_post_container";
             $(".instagram_posts_container").append(new_post);
             var new_post_a = document.createElement('a');
-            // new_post_a.setAttribute(href, post_url);
             new_post_a.href = post_url;
+            new_post_a.target = "_blank";
             new_post.append(new_post_a);
             var new_post_img = document.createElement('img');
             new_post_img.src = url;
@@ -154,17 +155,20 @@ function InstaFooter(){
 
         posts_array = data.graphql.user.edge_owner_to_timeline_media.edges;
 
-        posts_array = posts_array.slice(0, 10);
+        posts_array = posts_array.slice(0, 9);
 
         console.log(posts_array);
 
         posts_array.forEach((element) =>{
-            console.log(element.node.display_url);
-            CreatePost(element.node.display_url, "test");
+            CreatePost(element.node.display_url, `https://instagram.com/p/${element.node.shortcode}/`);
         });
 
-        url = "test";
-        post_url = "some other test"
-        // template = $.template('<div class="instagram_single_post_container"><a href="${url}" ><img src="${post_url}"></a><div>');
+        FooterProportions();
     });
+}
+
+function FooterProportions(){
+    width = $(".instagram_single_post_container a img").width();
+
+    $(".instagram_single_post_container").css("height", width);
 }

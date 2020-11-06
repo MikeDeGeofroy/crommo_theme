@@ -1,7 +1,9 @@
     <div class="instagramcontainer">
-        <p class="follow">FOLLOW US <a style="color: blue;" target="_blank" href="https://www.instagram.com/crommo__">@crommo__</a></p>
+        <p class="follow" style="margin-top: 20px; margin-bottom: 0;">FOLLOW US <a style="color: blue;" target="_blank" href="https://www.instagram.com/crommo__">@crommo__</a></p>
+        <hr style="width: 90vw;">
         <div class="instagram_posts_container">
         </div>
+        <hr style="width: 90vw; margin-bottom: 0;">
     </div>
     <div class="footer">
         <img src="<?php echo get_template_directory_uri()?>/assets/logo.png" alt="">
