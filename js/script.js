@@ -74,11 +74,11 @@ function MarqueeProportions(){
 }
 
 function ShopSettings(){
-    $(".post").each( () => {
+    $(".post").each(function(){
         titlewidth = $(".shopimg", this).width() + 5;
         $("p", this).css("width", titlewidth);
 
-        $(".buttons .button1", this).click( () => {
+        $(".buttons .button1", this).click(function(){
             postid = $(this).parent().parent().attr('id');
             $("#" + postid).fadeOut();
         });
