@@ -2,6 +2,10 @@ $(function() {
     HeaderProportions();
     MarqueeProportions();
     InstaFooter();
+    if(home){
+        HomeSettings();
+    }
+    ArrowBounce();
 });
 
 $(window).resize(function() {
@@ -9,11 +13,80 @@ $(window).resize(function() {
     MarqueeProportions();
     ShopSettings();
     FooterProportions();
+    if(home){
+        HomeSettings();
+    }
 });
 
 $(document).ready(function(){
     ShopSettings();
+    if(home){
+        HomeSettings();
+    }
 });
+
+function ArrowBounce(){
+    BounceAmmount = 100 + 'px';
+    $("#arrow_bounce").animate({ "transform":`translate(${BounceAmmount}, 0px)` }, 20000, "linear");
+    $("#arrow_bounce").animate({ "transform":`translate(${-BounceAmmount}, 0px)` }, 20000, "linear", () =>{
+        ArrowBounce();
+    });
+}
+
+function HomeSettings(){
+    $(".headerimagecontainer").css("height", window.innerHeight);
+
+    is_top = true;
+
+    if(window.scrollY < window.innerHeight){
+        $(".headercontainer").hide();
+    }
+
+    $(document).scroll( () => {
+
+        // If viewport is in main screen -> hide header
+        if(window.scrollY < window.innerHeight){
+            $(".headercontainer").fadeOut();
+        } else {
+            $(".headercontainer").fadeIn();
+            $("#arrow_bounce").fadeOut();
+            // is_top = false;
+        }
+
+        // If viewport is top -> set is_top : true;
+        if(window.scrollY == 0){
+            setTimeout(() => {  is_top = true; }, 500);
+            $("#arrow_bounce").fadeIn();
+        }
+
+        // If is_top true -> scroll down viewport height
+
+        if(is_top && window.scrollY < window.innerHeight){
+            window.scroll({ top: window.innerHeight, behavior: 'smooth' });
+            is_top = false;
+        }
+        // if(!is_top && window.scrollY < window.innerHeight){
+        //     window.scroll({ top: 0, behavior: 'smooth' });
+        //     is_top = true;
+        // }
+    });
+    // $(window).bind('mousewheel', function(event) {
+    //     if (event.originalEvent.wheelDelta >= 0 && window.scrollY < window.innerHeight) {
+    //         scroll = false;
+    //         console.log('Scroll up');
+    //     }
+    //     else if (window.scrollY < window.innerHeight){
+    //         scroll = true;
+    //         window.scroll({ top: window.innerHeight, behavior: 'smooth' });
+    //         console.log('Scroll down');
+    //     }
+    //     if(scroll){
+    //         window.scroll({ top: window.innerHeight, behavior: 'smooth' });
+    //     } else{
+    //         window.scroll({ top: 0, behavior: 'smooth' });
+    //     }
+    // });
+}
 
 function HeaderProportions(){
     // Getting height of header to then define the size of the text and logo based on the headder, then centering the text and logo.
@@ -59,14 +132,14 @@ function MarqueeProportions(){
 
     // Getting width of text element.
     $marqueetext.css("text-indent", "0");
-    $marqueetext.html(text);
+    $marqueetext.html(marquee_text);
     textwidth = $marqueetext.width();
     
     scroll();
 
     function scroll(){
         $marquee.css("text-indent", maxoffset);
-        $marqueetext.html(text);
+        $marqueetext.html(marquee_text);
         $marquee.animate({ "text-indent":`${-textwidth}` }, 20000, "linear", function(){
             scroll();
         });
@@ -174,6 +247,7 @@ function FooterProportions(){
 }
 
 function ObjectAnimation(template_directory){
+    
     container = document.getElementById( 'canvas' );
     document.body.appendChild( container );
 
@@ -191,13 +265,13 @@ function ObjectAnimation(template_directory){
     document.body.appendChild(renderer.domElement);
 
     var light1 = new THREE.PointLight(0xFFFFFF, 1, 500);
-    light1.position.set(0, 0, 10);
+    light1.position.set(0, 0, 20);
     scene.add(light1);
     var light2 = new THREE.PointLight(0xFFFFFF, 1, 500);
-    light2.position.set(0, 10, 0);
+    light2.position.set(0, 20, 0);
     scene.add(light2);
     var light3 = new THREE.PointLight(0xFFFFFF, 1, 500);
-    light2.position.set(10, 0, 0);
+    light2.position.set(20, 0, 0);
     scene.add(light3);
 
     var objLoader = new THREE.OBJLoader();
@@ -229,14 +303,23 @@ function ObjectAnimation(template_directory){
     });
 
     var render = function() {
+
         requestAnimationFrame(render);  
 
-        MyObj.rotation.y += 0.001;
-        MyObj.rotation.z += 0.001;
-        MyObj.rotation.x += 0.001;
+        MyObj.position.z = -50;
+        MyObj.position.x = 50;
+        MyObj.rotation.y -= 0.005;
+        // MyObj.rotation.z += 0.005;
+        // MyObj.rotation.x += 0.001;
 
         renderer.render(scene, camera);
     } 
+
+    window.addEventListener( 'resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+    }, false );
 
     render();
 }

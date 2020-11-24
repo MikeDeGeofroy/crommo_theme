@@ -13,8 +13,29 @@ html,body {
     padding: 0;
     margin: 0;
     font-family: 'Roboto';
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
+.header_image_container{
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('http://localhost:8888/wp-content/uploads/2020/11/Screenshot-2020-11-22-at-01.19.54-1024x572.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+.header_image_container img:not(.arrow_bounce){
+    width: 40%;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
 
 .headercontainer {
     position: fixed;
@@ -74,7 +95,7 @@ html,body {
 .postcontainer {
     width: 90vw;
     z-index: 1;
-    padding-top: 14vh;
+    padding-top: 16vh;
     margin-right: auto;
     margin-left: auto;
     min-height: 100%;
@@ -328,4 +349,39 @@ h3{
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.contact_container{
+    width: 90vw;
+    z-index: 1;
+    padding-top: 16vh;
+    margin-right: auto;
+    margin-left: auto;
+    min-height: 100%;
+    height: fit-content;
+    display: grid;
+    grid-gap: 30px;
+    grid-row-gap: 0px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+canvas {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -9999;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+#arrow_bounce{
+    max-width: 30px;
+    width: 10vw;
+    transform: translate(0, 40vh);
 }

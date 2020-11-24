@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(). '/style.css' ?>">
     <script>
-        text = "<?php echo bloginfo( 'description' ); ?>";
+        marquee_text = "<?php echo bloginfo( 'description' ); ?>";
         shop = false;
         <?php 
         if( is_page( 'shop' ) ){
             echo "shop = true;";
+        } elseif( is_home() ){
+            echo "home = true;";
         }
         ?>
         if(shop){

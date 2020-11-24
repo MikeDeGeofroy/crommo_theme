@@ -58,6 +58,10 @@ $query = new WP_Query( $args );
         </div>
         <?php
         } elseif( $_SESSION['category'] == "home" ) { ?>
+            <div class="header_image_container">
+                <img src="<?php echo get_template_directory_uri()?>/assets/logo2.png" alt="">
+                <img id="arrow_bounce" src="<?php echo get_template_directory_uri()?>/assets/Arrow_Down.png" alt="">
+            </div>
             <div class="postcontainer">
             <?php
             if ( $query->have_posts() ) {
@@ -75,8 +79,13 @@ $query = new WP_Query( $args );
             </div>
             <?php
         } else { ?>
-        <div style="margin: 0;" id="canvas">
+        <div class="contact_container">
+            <div class="contact">
+            <p>Bananas are sick bro!</p>
+            </div>
+            <div style="margin: 0; z-index: 0; position: fixed;" id="canvas">
 
+            </div>
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>
@@ -84,8 +93,10 @@ $query = new WP_Query( $args );
         <script src="<?php echo get_template_directory_uri(). '/js/mtl.js' ?>"></script>
 
         <script>
-        ObjectAnimation("<?php echo get_template_directory_uri()?>");
+            template_directory_uri = "<?php echo get_template_directory_uri()?>";
+            ObjectAnimation(template_directory_uri);
         </script>
+
             <?php
         }
         ?>
