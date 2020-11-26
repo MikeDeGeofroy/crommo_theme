@@ -37,7 +37,7 @@ html,body {
     top: 0; left: 0; bottom: 0; right: 0;
 }
 
-.headercontainer {
+.headercontainer:not(.mobile_navigation ) {
     position: fixed;
     /* background-color: white; */
     backdrop-filter: grayscale();
@@ -63,7 +63,6 @@ html,body {
 #logo img {
     height: 5vh;
     float: right;
-    margin-right: 100px;
 }
 
 #marquee {
@@ -76,6 +75,7 @@ html,body {
     min-height: 25px;
     overflow: hidden;
     white-space: nowrap;
+    z-index: 99999;
 }
 
 #marquee p {
@@ -89,6 +89,9 @@ html,body {
 
     #logo img {
         margin-right: 25px;
+    }
+    .burgermenu{
+        display: inline-block !important;
     }
 }
 
@@ -383,5 +386,78 @@ canvas {
 #arrow_bounce{
     max-width: 30px;
     width: 10vw;
-    transform: translate(0, 40vh);
+    transform: translateY(40vh);
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+      -webkit-transform: translateY(40vh);
+    }
+    50% {
+      -webkit-transform: translateY(39vh);
+    }
+}
+
+/* Burger Menu */
+
+#stripeone{
+    transform: rotate(0) translate(0px, 0px);
+}
+
+#stripetwo{
+    opacity: 1;
+}
+
+#stripethree{
+    transform: rotate(0) translate(0px, 0px);
+}
+
+.burgermenu div{
+    height: 1px;
+    background: black;
+    margin: 4px auto;
+    transition: all 0.3s;
+    animation-timing-function: linear;
+    backface-visibility: hidden;
+    width: 20px;
+}
+
+.burgermenu{
+    transition: all 0.3s;
+    cursor: pointer;
+    display: none;
+    background-color:rgba(255, 255, 255, 0.5);
+    backdrop-filter: grayscale();
+    border-radius: 10px;
+    padding: 5px;
+    transform: translateY(9px);
+}
+
+.mobile_navigation{
+    transform: translateX(-200px);
+    transition: all 0.3s;
+    animation-timing-function: linear;
+    position: fixed;
+}
+
+.mobile_navigation a{
+    background-color:rgba(255, 255, 255, 0.5);
+    backdrop-filter: grayscale();
+    z-index: 9999;
+    padding: 5px;
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+    font-weight: 300;
+    border-radius: 10px;
 }

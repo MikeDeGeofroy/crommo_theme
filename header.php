@@ -13,6 +13,7 @@
     <script>
         marquee_text = "<?php echo bloginfo( 'description' ); ?>";
         shop = false;
+        home = false;
         <?php 
         if( is_page( 'shop' ) ){
             echo "shop = true;";
@@ -52,5 +53,17 @@
             <a href="/shop">TIENDA</a>
             <a href="/contact" style="margin-right: 100px;">CONTACTO</a>
             <a id="logo" href="/"><img src="<?php echo get_template_directory_uri()?>/assets/logo.png" alt=""></a>
+        </div>
+        <div class="mobile_navigation">
+            <span class="mobile_navigation_buttons">
+                <a href="/">INICIO</a>
+                <a href="/shop">TIENDA</a>
+                <a href="/contact">CONTACTO</a>
+            </span>
+            <div class="burgermenu">
+                <div id="stripeone"></div>
+                <div id="stripetwo"></div>
+                <div id="stripethree"></div>
+            </div>
         </div>
     </div>

@@ -5,7 +5,7 @@ $(function() {
     if(home){
         HomeSettings();
     }
-    ArrowBounce();
+    ToggleBurgerMenu()
 });
 
 $(window).resize(function() {
@@ -16,6 +16,7 @@ $(window).resize(function() {
     if(home){
         HomeSettings();
     }
+    ToggleBurgerMenu()
 });
 
 $(document).ready(function(){
@@ -25,16 +26,47 @@ $(document).ready(function(){
     }
 });
 
-function ArrowBounce(){
-    BounceAmmount = 100 + 'px';
-    $("#arrow_bounce").animate({ "transform":`translate(${BounceAmmount}, 0px)` }, 20000, "linear");
-    $("#arrow_bounce").animate({ "transform":`translate(${-BounceAmmount}, 0px)` }, 20000, "linear", () =>{
-        ArrowBounce();
+function ToggleBurgerMenu() {
+    padding_left = $(".postcontainer").css("margin-left");
+
+    $(".burgermenu").css("margin-left", padding_left);
+    $(".mobile_navigation").css("margin-left", "0");
+    $(".mobile_navigation").css("transform", "translateX(-200px)")
+
+    $(".burgermenu").click( () => {
+        if($("#stripetwo").css("opacity") == 1){
+            // Open Menu
+
+            $("#stripeone").css("transform", "rotate(45deg) translate(3px, 4px)");
+            $("#stripetwo").css("opacity", "0");
+            $("#stripethree").css("transform", "rotate(-45deg) translate(3px, -4px)");
+
+            $(".burgermenu").css("margin-left", "0");
+            $(".burgermenu").css("padding-right", "4px");
+            $(".mobile_navigation").css("transform", "translateX(0px)")
+            $(".mobile_navigation").css("margin-left", padding_left);
+        } else {
+            // Close Menu
+
+            $("#stripeone").css("transform", "rotate(0) translate(0px, 0px)");
+            $("#stripetwo").css("opacity", "1");
+            $("#stripethree").css("transform", "rotate(0) translate(0px, 0px)");
+
+            $(".burgermenu").css("padding-right", "5px");
+            $(".mobile_navigation").css("margin-left", "0");
+            $(".mobile_navigation").css("transform", "translateX(-200px)")
+            $(".burgermenu").css("margin-left", padding_left);
+        }
     });
 }
 
 function HomeSettings(){
     $(".headerimagecontainer").css("height", window.innerHeight);
+
+    $("#arrow_bounce").click( () => {
+        window.scroll({ top: window.innerHeight, behavior: 'smooth' });
+        is_top = false;
+    })
 
     is_top = true;
 
@@ -65,27 +97,7 @@ function HomeSettings(){
             window.scroll({ top: window.innerHeight, behavior: 'smooth' });
             is_top = false;
         }
-        // if(!is_top && window.scrollY < window.innerHeight){
-        //     window.scroll({ top: 0, behavior: 'smooth' });
-        //     is_top = true;
-        // }
     });
-    // $(window).bind('mousewheel', function(event) {
-    //     if (event.originalEvent.wheelDelta >= 0 && window.scrollY < window.innerHeight) {
-    //         scroll = false;
-    //         console.log('Scroll up');
-    //     }
-    //     else if (window.scrollY < window.innerHeight){
-    //         scroll = true;
-    //         window.scroll({ top: window.innerHeight, behavior: 'smooth' });
-    //         console.log('Scroll down');
-    //     }
-    //     if(scroll){
-    //         window.scroll({ top: window.innerHeight, behavior: 'smooth' });
-    //     } else{
-    //         window.scroll({ top: 0, behavior: 'smooth' });
-    //     }
-    // });
 }
 
 function HeaderProportions(){
@@ -100,13 +112,17 @@ function HeaderProportions(){
 
     if(windowheight > 800){
         logosize = headerheight/2;
+        padding_left = $(".postcontainer").css("margin-left");
     } else {
         logosize = headerheight/3;
+        $("#logo img").css("height", logosize);
+        padding_left = $("#header").width()/2 - $("#logo img").width()/2;
     }
 
     logooffset = headerheight-logosize/1.2;
     $("#logo img").css("height", logosize);
     $("#logo img").css("margin-top", logooffset/2);
+    $("#logo img").css("margin-right", padding_left);
 }
 
 // Marquee
