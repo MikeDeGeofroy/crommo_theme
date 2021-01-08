@@ -7,9 +7,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(). '/js/script.js'?>"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(). '/js/general.js'?>"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(). '/style.css' ?>">
+    <?php 
+        if( is_page( 'shop' ) ){ ?>
+            <script type="text/javascript" src="<?php echo get_template_directory_uri(). '/js/shop.js'?>"></script>
+            <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(). '/style_shop.css' ?>">
+    <?php
+        } elseif( is_home() ){ ?>
+            <script type="text/javascript" src="<?php echo get_template_directory_uri(). '/js/home.js'?>"></script>
+            <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(). '/style_home.css' ?>">
+    <?php 
+        } else { ?>
+            <script type="text/javascript" src="<?php echo get_template_directory_uri(). '/js/contact.js'?>"></script>
+            <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(). '/style_contact.css' ?>">
+    <?php
+        }
+    ?>
     <script>
         marquee_text = "<?php echo bloginfo( 'description' ); ?>";
         shop = false;

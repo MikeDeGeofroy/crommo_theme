@@ -23,15 +23,13 @@ html,body {
     display: inline-block;
     width: 100vw;
     height: 100vh;
-    background-image: url('http://localhost:8888/wp-content/uploads/2020/11/Screenshot-2020-11-22-at-01.19.54-1024x572.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-color: white;
     text-align: center;
 }
 
-.header_image_container img:not(.arrow_bounce){
-    width: 40%;
+.header_image_container img:not(#arrow_bounce){
+    width: 15%;
+    min-width: 200px;
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
@@ -103,10 +101,6 @@ html,body {
     margin-left: auto;
     min-height: 100%;
     height: fit-content;
-    display: grid;
-    grid-gap: 30px;
-    grid-row-gap: 0px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 .imagecontainer_single {
@@ -177,93 +171,6 @@ html,body {
 
 #description, #purchase{
     margin-top: 33px;
-}
-
-.shopimg img {
-    width: 100%;
-}
-
-.overlay {
-    z-index: 4;
-}
-
-.shopimg {
-    border: 3px solid rgba(229, 225, 236, 1.00);
-    border-top: 30px solid rgba(229, 225, 236, 1.00);
-    border-radius: 5px;
-    box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.25);
-    -moz-box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.25);
-    -webkit-box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.25);
-    -khtml-box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.25);
-    overflow: hidden;
-    position: relative;
-}
-
-.post {
-    margin-top: 8px;
-    vertical-align: middle;
-    position: relative;
-}
-
-.post p {
-    top: 24px;
-    font-family: 'Roboto';
-    z-index: 2;
-    margin: 0;
-    font-size: 13px;
-    color: #4a6c78;
-    text-align: center;
-    position: relative;
-}
-
-.buttons img {
-    height: 12px;
-    top: 40px;
-    position: relative;
-    z-index: 3;
-}
-
-.button2 {
-    cursor: default;
-}
-
-.button3 a {
-    position: relative;
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0);
-    font-size: 20px;
-    font-weight: 900;
-    padding: 8px;
-    border: 3px solid rgba(255, 255, 255, 0);
-}
-
-.button3 {
-    width: 20%;
-}
-
-.buttons {
-    margin-left: 10px;
-}
-
-.homepageslider {
-    width: 75vw;
-    z-index: 1;
-    padding-top: 18vh;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.slidepost {
-    width: 100%;
-    height: auto;
-}
-
-.slidepost img {
-    width: 49%;
-}
-
-.post h1 {
-    width: 50%;
 }
 
 .footer {
@@ -384,9 +291,10 @@ canvas {
 }
 
 #arrow_bounce{
+    position: relative;
     max-width: 30px;
+    transform: translateY(90vh);
     width: 10vw;
-    transform: translateY(40vh);
     -webkit-animation-name: bounce;
     animation-name: bounce;
     -webkit-animation-duration: 2s;
@@ -401,10 +309,10 @@ canvas {
 
 @keyframes bounce {
     0%, 100% {
-      -webkit-transform: translateY(40vh);
+      -webkit-transform: translateY(93vh);
     }
     50% {
-      -webkit-transform: translateY(39vh);
+      -webkit-transform: translateY(92vh);
     }
 }
 

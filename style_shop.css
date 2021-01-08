@@ -1,0 +1,76 @@
+.postcontainer {
+    display: grid;
+    grid-gap: 30px;
+    grid-row-gap: 0px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.shopimg img {
+    width: 100%;
+}
+
+.overlay {
+    z-index: 4;
+}
+
+.shopimg {
+    border: 3px solid rgba(229, 225, 236, 1.00);
+    border-top: 30px solid rgba(229, 225, 236, 1.00);
+    border-radius: 5px;
+    box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.25);
+    -moz-box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.25);
+    -webkit-box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.25);
+    -khtml-box-shadow: 0px 0px 30px rgba(42, 44, 42, 0.25);
+    overflow: hidden;
+    position: relative;
+}
+
+.post {
+    margin-top: 8px;
+    vertical-align: middle;
+    position: relative;
+}
+
+.post p {
+    top: 24px;
+    font-family: 'Roboto';
+    z-index: 2;
+    margin: 0;
+    font-size: 13px;
+    color: #4a6c78;
+    text-align: center;
+    position: relative;
+}
+
+.buttons img {
+    height: 12px;
+    top: 40px;
+    position: relative;
+    z-index: 3;
+}
+
+.button2 {
+    cursor: default;
+}
+
+.button3 a {
+    position: relative;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0);
+    font-size: 20px;
+    font-weight: 900;
+    padding: 8px;
+    border: 3px solid rgba(255, 255, 255, 0);
+}
+
+.button3 {
+    width: 20%;
+}
+
+.buttons {
+    margin-left: 10px;
+}
+
+.post h1 {
+    width: 50%;
+}
