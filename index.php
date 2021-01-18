@@ -88,13 +88,13 @@ $query = new WP_Query( $args );
         if ( $query->have_posts() ) {
             while ( $query->have_posts() ) {
                 $query->the_post(); ?>
-        <a href="<?php the_permalink()?>" >
+        <a href="<?php the_permalink()?>">
             <div class="post post2">
                 <h1><?php the_title(); ?></h1>
                 <?php 
                     $output = preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $post->post_content, $matches);
-                    echo $matches[0][0];
-                    ?>
+                echo $matches[0][0];
+                ?>
             </div>
         </a>
         <?php
@@ -108,17 +108,12 @@ $query = new WP_Query( $args );
     </div>
     <?php
         } elseif( $_SESSION['category'] == "contact" ) { ?>
-    <div class="contact_container">
+    <div class="postcontainer">
+        <div id="canvas"></div>
         <div class="contact">
-            <div class="postcontainer">
-                <div class="post">
-                    <img src="" alt="">
-                </div>
-            </div>
-            <p>Bananas are sick bro!</p>
-        </div>
-        <div style="margin: 0; z-index: 0; position: fixed;" id="canvas">
-
+            <h1>CONTACTAR</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique quod harum illum incidunt dolor,
+                voluptate voluptatum obcaecati iste rem sint.</p>
         </div>
     </div>
 

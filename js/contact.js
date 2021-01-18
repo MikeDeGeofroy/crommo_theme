@@ -1,20 +1,23 @@
 function ObjectAnimation(template_directory){
     
     container = document.getElementById( 'canvas' );
-    document.body.appendChild( container );
+    // document.body.appendChild( container );
 
     var scene = new THREE.Scene();
 
-    var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+    var w = container.offsetWidth;
+    var h = container.offsetHeight;
+
+    var camera = new THREE.PerspectiveCamera( 75, w/h, 0.1, 1000 );
     camera.position.z = 2;
 
     var renderer = new THREE.WebGLRenderer({antialias: true});
 
     renderer.setClearColor("#FFFFFF");
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(w, h);
 
-    document.body.appendChild(renderer.domElement);
+    container.appendChild(renderer.domElement);
 
     var light1 = new THREE.PointLight(0xFFFFFF, 1, 500);
     light1.position.set(0, 0, 20);
@@ -58,19 +61,21 @@ function ObjectAnimation(template_directory){
 
         requestAnimationFrame(render);  
 
-        MyObj.position.z = -50;
-        MyObj.position.x = 50;
-        MyObj.rotation.y -= 0.005;
-        // MyObj.rotation.z += 0.005;
-        // MyObj.rotation.x += 0.001;
+        MyObj.position.z = -30;
+        MyObj.position.x = 0;
+        MyObj.rotation.y -= 0.002;
+        MyObj.rotation.z += 0.002;
+        MyObj.rotation.x += 0.002;
 
         renderer.render(scene, camera);
     } 
 
     window.addEventListener( 'resize', () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
+        w = container.offsetWidth;
+        h = container.offsetHeight;
+        camera.aspect = w/h;
         camera.updateProjectionMatrix();
-        renderer.setSize( window.innerWidth, window.innerHeight );
+        renderer.setSize(w,h);
     }, false );
 
     render();

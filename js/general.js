@@ -71,6 +71,7 @@ function HeaderProportions(){
     logooffset = headerheight-logosize/1.2;
     $("#logo img").css("height", logosize);
     $("#logo img").css("margin-top", logooffset/2);
+    console.log(padding_left);
     $("#logo img").css("margin-right", padding_left);
 }
 

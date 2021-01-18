@@ -38,7 +38,6 @@ html,body {
 .headercontainer:not(.mobile_navigation ) {
     position: fixed;
     /* background-color: white; */
-    backdrop-filter: grayscale();
     z-index: 9999;
 }
 
@@ -47,7 +46,7 @@ html,body {
     min-height: 60px;
     top: 0;
     width: 100vw;
-    background-color:rgba(255, 255, 255, 0.5);
+    background-color:rgba(255, 255, 255, 1);
 }
 
 #header a:not(#logo) {
@@ -65,7 +64,7 @@ html,body {
 
 #marquee {
     /* background-color: #7df487; */
-    background-color:rgba(255, 255, 255, 0.5);
+    background-color:rgba(255, 255, 255, 1);
     height: 4vh;
     width: 100vw;
     font-weight: 200;
@@ -224,6 +223,11 @@ a{
     color: black;
 }
 
+a:hover{
+    text-decoration: none;
+    color: black;
+}
+
 .info {
     float: right;
     margin: 4vh;
@@ -273,16 +277,6 @@ h3{
     grid-gap: 30px;
     grid-row-gap: 0px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-}
-
-canvas {
-    width: 100vw;
-    height: 100vh;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -9999;
 }
 
 ::-webkit-scrollbar {
@@ -368,4 +362,8 @@ canvas {
     color: black;
     font-weight: 300;
     border-radius: 10px;
+}
+
+h1{
+    font-weight: lighter;
 }
