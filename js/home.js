@@ -1,7 +1,3 @@
-$(function() {
-    HomeSettings();
-});
-
 $(window).resize(function() {
     HomeSettings();
 });
@@ -48,4 +44,6 @@ function HomeSettings(){
             is_top = false;
         }
     });
-}
+
+    // Posts positioning. Count posts, if is first post, set to take full width, second column 1, third column 3
+}  

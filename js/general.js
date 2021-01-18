@@ -113,7 +113,6 @@ function MarqueeProportions(){
 
 function InstaFooter(){
     $.getJSON("https://www.instagram.com/crommo__/?__a=1", (data) => {
-        console.log(data);
         function CreatePost(url, post_url){
             var new_post = document.createElement('div');
             new_post.className = "instagram_single_post_container";
