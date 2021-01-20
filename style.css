@@ -45,26 +45,23 @@ html,body {
     height: 10vh;
     min-height: 60px;
     top: 0;
-    width: 100vw;
     background-color:rgba(255, 255, 255, 1);
 }
 
 #header a:not(#logo) {
-    display: inline-block;
     text-decoration: none;
+    float: right;
     color: black;
     font-weight: 300;
-    margin-left: 50px;
 }
 
 #logo img {
     height: 5vh;
-    float: right;
+    float: left;
 }
 
 #marquee {
-    /* background-color: #7df487; */
-    background-color:rgba(255, 255, 255, 1);
+    background-color:#00FF89;
     height: 4vh;
     width: 100vw;
     font-weight: 200;
@@ -85,11 +82,16 @@ html,body {
     }
 
     #logo img {
+        transform: rotate(-90deg) translate(-110%, -80%) scale(2);
         margin-right: 25px;
     }
-    .burgermenu{
-        display: inline-block !important;
+
+    #header{
+        background-color: transparent;
     }
+    /* .burgermenu{
+        display: inline-block !important;
+    } */
 }
 
 .postcontainer {

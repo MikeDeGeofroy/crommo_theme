@@ -88,9 +88,9 @@ $query = new WP_Query( $args );
         if ( $query->have_posts() ) {
             while ( $query->have_posts() ) {
                 $query->the_post(); ?>
-        <a href="<?php the_permalink()?>">
-            <div class="post post2">
-                <h1><?php the_title(); ?></h1>
+        <a href="<?php the_permalink() ?>">
+            <div class="post">
+                <span><?php the_title(); ?></span>
                 <?php 
                     $output = preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $post->post_content, $matches);
                 echo $matches[0][0];
@@ -111,9 +111,8 @@ $query = new WP_Query( $args );
     <div class="postcontainer">
         <div id="canvas"></div>
         <div class="contact">
-            <h1>CONTACTAR</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique quod harum illum incidunt dolor,
-                voluptate voluptatum obcaecati iste rem sint.</p>
+            <h1>+34 635 03 58 71</h1>
+            <h1>info@crommo.es</h1>
         </div>
     </div>
 

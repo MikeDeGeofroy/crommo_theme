@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script type="text/javascript" src="<?php echo get_template_directory_uri(). '/js/general.js'?>"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(). '/style.css' ?>">
@@ -50,7 +52,6 @@
             });
         }
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
@@ -64,9 +65,9 @@
             </p>
         </div>
         <div id="header">
-            <a href="/" style="margin-left: 50px;">INICIO</a>
-            <a href="/shop">TIENDA</a>
-            <a href="/contact" style="margin-right: 100px;">CONTACTO</a>
+            <a href="/contact">CONTACTO</a>
+            <a href="/" style="margin-right: 50px;">INICIO</a>
+            <!-- <a href="/shop">TIENDA</a> -->
             <a id="logo" href="/"><img src="<?php echo get_template_directory_uri()?>/assets/logo.png" alt=""></a>
         </div>
         <div class="mobile_navigation">

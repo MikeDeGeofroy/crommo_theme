@@ -3,7 +3,8 @@ $(window).resize(function() {
 });
 
 $(document).ready(function(){
-    HomeSettings()
+    HomeSettings();
+    moodBoard();
 });
 
 function HomeSettings(){
@@ -47,3 +48,29 @@ function HomeSettings(){
 
     // Posts positioning. Count posts, if is first post, set to take full width, second column 1, third column 3
 }  
+
+function moodBoard(){
+    element = $('.post');
+
+    element.draggable({
+        cursor: "move",
+        stack: ".post"
+    })
+
+    element.each( setRandomPosition );
+
+    function setRandomPosition(){
+        //Generate random Top % [0, 75]
+        var randomTop = randomIntFromInterval(-35, 35);
+        //Generate randon Left % [0, 85]
+        var randomLeft = randomIntFromInterval(-35, 35);
+        $(this).css({
+          top: randomTop + '%',
+          left: randomLeft + '%'
+        })
+      }
+
+    function randomIntFromInterval(min,max) {
+        return Math.floor(Math.random()*(max-min+1)+min);
+    }
+}
