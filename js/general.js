@@ -52,10 +52,10 @@ function ToggleBurgerMenu() {
 function HeaderProportions(){
     // Getting height of header to then define the size of the text and logo based on the headder, then centering the text and logo.
     headerheight = $("#header").height();
-    textsize = headerheight/4;
-    $("#header a:not(#logo)").css("font-size", textsize);
+    textsize = headerheight/3;
+    $(".navigation a").css("font-size", textsize);
     textoffset = headerheight/2 - textsize/2;
-    $("#header a:not(#logo)").css("margin-top", textoffset);
+    $(".navigation").css("margin-top", textoffset);
 
     windowheight = $(document).width();
 

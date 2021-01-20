@@ -26,8 +26,8 @@ function ObjectAnimation(template_directory){
     light2.position.set(0, 20, 0);
     scene.add(light2);
     var light3 = new THREE.PointLight(0xFFFFFF, 1, 500);
-    light2.position.set(20, 0, 0);
-    scene.add(light3);
+    light2.position.set(-20, 0, 0);
+    // scene.add(light3);
 
     var objLoader = new THREE.OBJLoader();
     var mtlLoader = new THREE.MTLLoader();
@@ -38,7 +38,7 @@ function ObjectAnimation(template_directory){
 
     console.log(template_directory);
 
-    var url = "untitled.mtl";
+    var url = "apollo.mtl";
 
     mtlLoader.load(url, function(materials) {
 
@@ -47,7 +47,7 @@ function ObjectAnimation(template_directory){
     var objLoader = new THREE.OBJLoader();
     objLoader.setMaterials(materials);
     objLoader.setPath(template_directory + '/3d_objects/');
-    objLoader.load('untitled.obj', function (object) {
+    objLoader.load('apollo.obj', function (object) {
 
         MyObj = object;
 
@@ -61,11 +61,15 @@ function ObjectAnimation(template_directory){
 
         requestAnimationFrame(render);  
 
-        MyObj.position.z = -30;
+        MyObj.scale.z = 0.005;
+        MyObj.scale.x = 0.005;
+        MyObj.scale.y = 0.005;
+        MyObj.position.z = -10;
         MyObj.position.x = 0;
+        MyObj.position.y = -5;
         MyObj.rotation.y -= 0.002;
-        MyObj.rotation.z += 0.002;
-        MyObj.rotation.x += 0.002;
+        // MyObj.rotation.z += 0.002;
+        // MyObj.rotation.x += 0.002;
 
         renderer.render(scene, camera);
     } 

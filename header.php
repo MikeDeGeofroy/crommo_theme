@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="<?php echo get_template_directory_uri(). '/offline_libs/jquery.ui.touch-punch.min.js'?>"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(). '/js/general.js'?>"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(). '/style.css' ?>">
@@ -65,12 +66,14 @@
             </p>
         </div>
         <div id="header">
-            <a href="/contact">CONTACTO</a>
-            <a href="/" style="margin-right: 50px;">INICIO</a>
+            <div class="navigation">
+                <a href="/">Portfolio</a>
+                <a href="/contact">Contacto</a>
+            </div>
             <!-- <a href="/shop">TIENDA</a> -->
             <a id="logo" href="/"><img src="<?php echo get_template_directory_uri()?>/assets/logo.png" alt=""></a>
         </div>
-        <div class="mobile_navigation">
+        <!-- <div class="mobile_navigation">
             <span class="mobile_navigation_buttons">
                 <a href="/">INICIO</a>
                 <a href="/shop">TIENDA</a>
@@ -81,5 +84,5 @@
                 <div id="stripetwo"></div>
                 <div id="stripethree"></div>
             </div>
-        </div>
+        </div> -->
     </div>

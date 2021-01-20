@@ -88,8 +88,8 @@ $query = new WP_Query( $args );
         if ( $query->have_posts() ) {
             while ( $query->have_posts() ) {
                 $query->the_post(); ?>
-        <a href="<?php the_permalink() ?>">
-            <div class="post">
+        <a class="post" href="<?php the_permalink() ?>">
+            <div>
                 <span><?php the_title(); ?></span>
                 <?php 
                     $output = preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $post->post_content, $matches);
