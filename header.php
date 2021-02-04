@@ -39,19 +39,6 @@
             echo "home = true;";
         }
         ?>
-        if(shop){
-            $(document).ready(function () {
-
-            if (localStorage.getItem("scroll_position") != null) {
-                $(window).scrollTop(localStorage.getItem("scroll_position"));
-            }
-
-            $(window).on("scroll", function() {
-                localStorage.setItem("scroll_position", $(window).scrollTop());
-            });
-
-            });
-        }
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
@@ -66,23 +53,10 @@
             </p>
         </div>
         <div id="header">
+            <a id="logo" href="/"><img src="<?php echo get_template_directory_uri()?>/assets/logo.png" alt=""></a>
             <div class="navigation">
                 <a href="/">Portfolio</a>
                 <a href="/contact">Contacto</a>
             </div>
-            <!-- <a href="/shop">TIENDA</a> -->
-            <a id="logo" href="/"><img src="<?php echo get_template_directory_uri()?>/assets/logo.png" alt=""></a>
         </div>
-        <!-- <div class="mobile_navigation">
-            <span class="mobile_navigation_buttons">
-                <a href="/">INICIO</a>
-                <a href="/shop">TIENDA</a>
-                <a href="/contact">CONTACTO</a>
-            </span>
-            <div class="burgermenu">
-                <div id="stripeone"></div>
-                <div id="stripetwo"></div>
-                <div id="stripethree"></div>
-            </div>
-        </div> -->
     </div>

@@ -1,7 +1,8 @@
 $(function() {
     HeaderProportions();
     MarqueeProportions();
-    ToggleBurgerMenu()
+    ToggleBurgerMenu();
+    $(window).scrollTop(0);
 });
 
 $(window).resize(function() {
@@ -65,16 +66,21 @@ function HeaderProportions(){
         $("#header").css("padding-left", padding_left);
         $("#header").css("padding-right", padding_left);
     } else {
-        logosize = headerheight/3;
-        $("#logo img").css("height", logosize);
-        padding_left = $("#header").width()/2 - $("#logo img").width()/2;
-        $("#header").css("padding-left", 0);
-        $("#header").css("padding-right", 0);
+        // logosize = headerheight/3;
+        // $("#logo img").css("height", logosize);
+        // padding_left = $("#header").width()/2 - $("#logo img").width()/2;
+        // $("#header").css("padding-left", 0);
+        // $("#header").css("padding-right", 0);
+        logosize = headerheight/2;
+        padding_left = $(".postcontainer").css("margin-left");
+        $("#header").css("padding-left", padding_left);
+        $("#header").css("padding-right", padding_left);
     }
 
     logooffset = headerheight-logosize/1.2;
-    $("#logo img").css("height", logosize);
-    $("#logo img").css("margin-top", logooffset/2);
+    // $("#logo img").css("height", logosize);
+    // $("#logo img").css("margin-top", textoffset);
+    // $("#logo img").css("margin-top", logooffset/2);
 }
 
 // Marquee

@@ -38,7 +38,7 @@ function ObjectAnimation(template_directory){
 
     console.log(template_directory);
 
-    var url = "apollo.mtl";
+    var url = "cart_obj.mtl";
 
     mtlLoader.load(url, function(materials) {
 
@@ -47,7 +47,7 @@ function ObjectAnimation(template_directory){
     var objLoader = new THREE.OBJLoader();
     objLoader.setMaterials(materials);
     objLoader.setPath(template_directory + '/3d_objects/');
-    objLoader.load('apollo.obj', function (object) {
+    objLoader.load('cart_obj.obj', function (object) {
 
         MyObj = object;
 
@@ -64,9 +64,9 @@ function ObjectAnimation(template_directory){
         MyObj.scale.z = 0.005;
         MyObj.scale.x = 0.005;
         MyObj.scale.y = 0.005;
-        MyObj.position.z = -10;
+        MyObj.position.z = 1.3;
         MyObj.position.x = 0;
-        MyObj.position.y = -5;
+        MyObj.position.y = -0.3;
         MyObj.rotation.y -= 0.002;
         // MyObj.rotation.z += 0.002;
         // MyObj.rotation.x += 0.002;

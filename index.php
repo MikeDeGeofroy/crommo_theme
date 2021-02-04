@@ -65,24 +65,9 @@ $query = new WP_Query( $args );
         } elseif( $_SESSION['category'] == "home" ) { ?>
     <div class="header_image_container">
         <img src="<?php echo get_template_directory_uri()?>/assets/logo.png" alt="">
-        <img id="arrow_bounce" src="<?php echo get_template_directory_uri()?>/assets/Arrow_Down.png" alt="">
+        <!-- <img id="arrow_bounce" src="<?php echo get_template_directory_uri()?>/assets/Arrow_Down.png" alt=""> -->
     </div>
     <div class="postcontainer">
-        <!-- <div class="post">
-            <h1>EL TITULO</h1>
-            <img src="https://images.unsplash.com/photo-1607903289321-7d98f815796d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-                alt="">
-        </div>
-        <div class="post post3">
-            <h1>EL TITULO</h1>
-            <img src="https://images.unsplash.com/photo-1531346724132-8e2e298435e5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=80"
-                alt="">
-        </div>
-        <div class="post post2">
-            <h1>EL TITULO</h1>
-            <img src="https://images.unsplash.com/photo-1555928999-5a01ee666478?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
-                alt="">
-        </div> -->
         <?php 
 
         if ( $query->have_posts() ) {
@@ -101,9 +86,6 @@ $query = new WP_Query( $args );
             }
         }
 
-
-
-
         ?>
     </div>
     <?php
@@ -111,8 +93,8 @@ $query = new WP_Query( $args );
     <div class="postcontainer">
         <div id="canvas"></div>
         <div class="contact">
-            <h1>+34 635 03 58 71</h1>
-            <h1>info@crommo.es</h1>
+            <h2><a href="tel:+34 635 03 58 71">+34 635 03 58 71</a></h2>
+            <h2><a href="mailto:hello@crommo.es">hello@crommo.es</a></h2>
         </div>
     </div>
 

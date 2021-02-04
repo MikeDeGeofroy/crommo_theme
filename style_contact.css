@@ -1,9 +1,20 @@
 #canvas {
     background-color: #FFF;
     width: 100%;
-    height: 40vh;
+    height: 30vh;
     display: block;
 }
-.contact h1{
+.contact h2{
     text-align: center;
+    font-weight: lighter;
+}
+
+.contact h2 a{
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.contact h2 a:hover{
+    color: black !important;
+    text-decoration: none !important;
 }

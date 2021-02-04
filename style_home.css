@@ -20,3 +20,27 @@
     grid-template-rows: auto;
     grid-template-columns: 50% 50%;
 }
+
+.header_image_container{
+    overflow: hidden;
+    display: block;
+    height: 70vh;
+    width: 100vw;
+    background-color: white;
+    text-align: center;
+}
+
+.header_image_container img{
+    width: 15%;
+    min-width: 300px;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 99999;
+}
+
+.headercontainer {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
